@@ -39,7 +39,8 @@ From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
         librdmacm-dev \
         librdmacm1
     rm -rf /var/lib/apt/lists/*
-apt-get -y install wget bash gcc gfortran g++ make file
+apt-get update -y
+apt-get -y install wget file
 #echo "Installing Open MPI"
 export OMPI_DIR=/opt/ompi
 export OMPI_VERSION=4.0.3
