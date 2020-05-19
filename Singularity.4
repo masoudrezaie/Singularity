@@ -18,7 +18,16 @@ From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         ca-certificates \
         gnupg \
-        wget
+        tar \
+        bzip2 \
+        file \
+        wget \
+        hwloc \
+        libnuma-dev \
+        make \
+        openssh-client \
+        perl 
+
     rm -rf /var/lib/apt/lists/*
 %post
     wget -qO - https://www.mellanox.com/downloads/ofed/RPM-GPG-KEY-Mellanox | apt-key add -
