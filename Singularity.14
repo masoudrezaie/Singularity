@@ -29,6 +29,7 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
         tcptrack\
         nethogs\
         wireshark\
+        tshark\
         wget
     rm -rf /var/lib/apt/lists/*
 %post
@@ -106,6 +107,7 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
     fi
     python $HOME/test_torch_1241.py
 %post
+    dpkg-reconfigure wireshark-common
     chmod 777 /var/lib/
     export LD_LIBRARY_PATH=/usr/local/openmpi/lib:$LD_LIBRARY_PATH
     export PATH=/usr/local/openmpi/bin:$PATH
