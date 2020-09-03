@@ -83,11 +83,11 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
     rm -rf /var/tmp/openmpi-4.0.3 /var/tmp/openmpi-4.0.3.tar.bz2
     
 %post
-   mkdir -p /var/local2/aws-sdk-cpp
-   git clone https://github.com/aws/aws-sdk-cpp.git /var/local2/aws-sdk-cpp
+   mkdir -p /var/local/
+   git clone https://github.com/aws/aws-sdk-cpp.git /var/local/
    mkdir sdk_build
    cd sdk_build
-   cmake /var/local2/aws-sdk-cpp/
+   cmake /var/local/aws-sdk-cpp/
    make
    make install
    
