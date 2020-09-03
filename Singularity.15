@@ -82,13 +82,20 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
     make -j$(nproc)
     make -j$(nproc) install
     rm -rf /var/tmp/openmpi-4.0.3 /var/tmp/openmpi-4.0.3.tar.bz2
-    
+
 %post
-   mkdir -p /var/local/
-   git clone https://github.com/aws/aws-sdk-cpp.git /var/local/
+    mkdir -p /var/tmp && wget -q -nc --no-check-certificate -P /var/tmp http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz 
+    mkdir -p /var/tmp && tar -xvzf cmake-3.12.1.tar.gz -C /var/tmp -j
+    cd /var/tmp/cmake-3.12.1/ 
+    ./configure 
+    make -j$(nproc)
+    rm -rf /var/tmp/cmake-3.12.1 /var/tmp/cmake-3.12.1.tar.gz 
+%post
+   mkdir -p /var/tmp
+   git clone https://github.com/aws/aws-sdk-cpp.git /var/tmp/sdk
    mkdir sdk_build
    cd sdk_build
-   cmake /var/local/aws-sdk-cpp/
+   cmake /var/local/sdk/
    make
    make install
    
