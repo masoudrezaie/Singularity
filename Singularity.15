@@ -45,6 +45,7 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
         libcurl4-openssl-dev\
         libssl-dev\
         uuid-dev\
+        libs3-2\
         zlib1g-dev\
         libpulse-dev\
         zlib1g-dev\
@@ -84,13 +85,7 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
     make -j$(nproc) install
     rm -rf /var/tmp/openmpi-4.0.3 /var/tmp/openmpi-4.0.3.tar.bz2
 
-%post
-   git clone https://github.com/aws/aws-sdk-cpp.git 
-   mkdir sdk_build
-   cd sdk_build
-   cmake /aws-sdk-cpp
-   make
-   make install
+
    
 %post
     mkdir -p /var/local/ && wget -q -nc --no-check-certificate -O /var/local/anaconda3.tar.gz https://owncloud.gwdg.de/index.php/s/X2Qr4lkhJig9IBn/download
