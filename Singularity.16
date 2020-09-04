@@ -1,2 +1,2 @@
 BootStrap: docker
-From:andykirkham/aws-sdk-cpp
+From:federated/aws-sdk-cpp
