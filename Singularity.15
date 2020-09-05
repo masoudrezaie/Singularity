@@ -28,8 +28,7 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
         iptraf\
         cbm\
         iperf3\
-        libs3-2\
-        libs3-dev\
+        libxml2-dev\
         nload\
         tcptrack\
         nethogs\
