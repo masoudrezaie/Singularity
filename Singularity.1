@@ -4,5 +4,8 @@ From: ubuntu:latest
 %post
 
 apt-get -y update
-apt-get -y install git
+apt-get -y install git 
 git clone https://github.com/bji/libs3.git
+cd libs3
+make
+make install
