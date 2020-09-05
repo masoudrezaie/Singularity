@@ -113,7 +113,6 @@ From:nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
     echo "slurmadmin:x:300:300::/opt/slurm/slurm:/bin/false" >> /etc/passwd
     echo "slurmadmin:x:300:" >> /etc/group
     export PATH="/opt/slurm/bin:$PATH"
-    
     File_test=$HOME/test_torch_1241.py
     if [ -f "$File_test" ]; then
         echo "Testing NCCL and MPI"
