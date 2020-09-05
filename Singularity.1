@@ -6,6 +6,6 @@ cd /
 apt-get -y update
 apt-get -y install git make
 mkdir -p /var/tmp && git clone https://github.com/bji/libs3.git /var/tmp/
-cd /var/tmp/libs3
+cd /var/tmp/*
 make -j$(nproc)
 make -j$(nproc) install
